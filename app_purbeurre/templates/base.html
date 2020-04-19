@@ -30,9 +30,15 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item">
+                            <form method="get">
+                                <input class="form-control" name="query" type="text" placeholder="Chercher" />
+                            </form>
+                        </li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Mon compte / Connexion</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Mes aliments</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Déconnexion</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,8 +50,9 @@
         <footer class="bg-light py-5">
             <div class="container">
                 <div class="small text-center text-muted">
-                    <a href="https://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_limit%C3%A9e_GNU">© 2020 - GPL Licence</a><br>
+                    <a href="https://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_limit%C3%A9e_GNU">© 2020 - GPL Licence</a>
                     <a href="{% url 'terms' %}">Mentions légales</a>
+                    <a href="{% url 'index' %}">Contact</a></li>
                 </div>
             </div>
         </footer>
