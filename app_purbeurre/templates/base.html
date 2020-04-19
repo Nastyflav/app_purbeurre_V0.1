@@ -9,13 +9,13 @@
         <link rel="icon" type="image/png" href="{% static 'img/logo_pur_beurre-favicon.png' %}"/>
         <title>Pur Beurre, l'application </title>
 
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Font Awesome icons -->
+        <link href="{% static 'js/fontawesome.all.min.css' %}" rel="stylesheet" type="text/css">
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         <!-- Third party plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <link href="{% static 'css/magnific-popup.min.css' %}" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/creative.css' %}" rel="stylesheet">
     </head>
@@ -193,7 +193,10 @@
         <!-- Footer-->
         <footer class="bg-light py-5">
             <div class="container">
-                <div class="small text-center text-muted">Copyright © 2020 - GLS Licence</div>
+                <div class="small text-center text-muted">
+                    <a href="https://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_limit%C3%A9e_GNU">© 2020 - GPL Licence</a><br>
+                    <a href="{% url 'terms' %}">Mentions légales</a>
+                </div>
             </div>
         </footer>
         <!-- Bootstrap core JS-->
