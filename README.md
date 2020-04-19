@@ -12,7 +12,7 @@ Once you arrive on the [GrandPy Bot web page](https://gp-bot-app.herokuapp.com/)
 	- you can ask him to find a location and its historical background \
 	- a map will be displayed each time you request a location
 
-GrandPy Bot is hosted by [Heroku](https://www.heroku.com/), and for now is only available in french language.	
+Pur Beurre is hosted by [Heroku](https://www.heroku.com/), and for now is only available in french language.	
 
 # For developpers, how to install and work on the app :
 --------------
@@ -37,13 +37,12 @@ install pip : https://packaging.python.org/tutorials/installing-packages/
 
 ## Modules :
 
-run_program.py\
-config.py\
-gpb_app/models/ contains all the different classes and the app functions\
-gpb_app/templates/ manages the frontend structure with an html file \
-gpb_app/static/ contains the images, fonts, js script and css files\
-gpb_app/views.py manages the Flask module\
-gpb_app/tests/ all the test files, with mocks\
+app_purbeurre (main project)\
+app_purbeurre/authentication/ user profiles, sign in, log in and out functionalities\
+app_purbeurre/save/ products saving functionalities\
+app_purbeurre/search/ products searching and printing functionalities\
+app_purbeurre/static/ all the static files, with Boostrap, JQuery, images and css/sass libraries\
+app_purbeurre/templates/ all the basics and home html templates\
 
 ## Built with :
 
