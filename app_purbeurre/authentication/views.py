@@ -37,7 +37,7 @@ class LogIn(FormView):
 
     template_name = 'registration/login.html'
     form_class = LogInForm
-    success_url = '/'
+    success_url = '/profil/'
 
     def form_valid(self, form):
         """if the form is validated"""
