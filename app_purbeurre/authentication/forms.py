@@ -31,7 +31,7 @@ class SignUpForm(UserCreationForm):
 
     last_name = forms.CharField(required=False, label="Votre nom (facultatif)", widget=TextInput(attrs={'class': 'form-control'}))
     
-    password1 = forms.CharField(label="Choissisez un mot de passe", widget=PasswordInput(attrs={'class': 'form-control'}))
+    password1 = forms.CharField(label="Choisissez un mot de passe", widget=PasswordInput(attrs={'class': 'form-control'}))
 
     password2 = forms.CharField(label="Confirmez votre mot de passe", widget=PasswordInput(attrs={'class': 'form-control'}))
 
