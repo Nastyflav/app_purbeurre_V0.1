@@ -24,7 +24,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="{% url 'index' %}">
+                <a class="navbar-brand" href="{% url 'index' %}">
                 <a href="/"><img src="{% static 'img/logo_pur_beurre.png' %}" width="32" height="32" alt="Logo" style="margin-top: -4px;" />
                 Pur Beurre</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -55,14 +55,12 @@
         {% block content %}{% endblock %}
 
         <!-- Footer-->
-        <footer class="bg-light py-5">
+        <footer class="bg-secondary py-5">
             <div class="container">
                 <div class="small text-center text-muted">
                     <a href="https://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_limit%C3%A9e_GNU">© 2020 - GPL Licence</a>
                     <a href="{% url 'terms' %}">Mentions légales</a>
-                    <a href="{% url 'index
-                    
-                    ' %}">Contact</a></li>
+                    <a href="{% url 'index' %}">Contact</a></li>
                 </div>
             </div>
         </footer>
