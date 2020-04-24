@@ -66,13 +66,20 @@
         <!-- Footer-->
         <footer class="bg-secondary py-5">
             <div class="container">
-                <div class="small text-center text-muted">
-                    <a href="https://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_limit%C3%A9e_GNU">© 2020 - GPL Licence</a>
-                    <a href="{% url 'terms' %}">Mentions légales</a>
-                    <a href="{% url 'index' %}">Contact</a></li>
+                <div class="row">
+                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0 small text-muted">
+                        <a href="https://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_limit%C3%A9e_GNU">© 2020 - GPL Licence</a>
+                    </div>
+                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0 small text-muted">
+                        <a href="{% url 'terms' %}">Mentions légales</a>
+                    </div>
+                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0 small text-muted">
+                        <a href="{% url 'index' %}">Contact</a>
+                    </div>
                 </div>
             </div>
         </footer>
+        
         <!-- Bootstrap core JS-->
         <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
         <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
