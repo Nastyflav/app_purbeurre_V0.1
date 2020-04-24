@@ -24,28 +24,37 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'index' %}">
-                <a href="/"><img src="{% static 'img/logo_pur_beurre.png' %}" width="32" height="32" alt="Logo" style="margin-top: -4px;" />
-                Pur Beurre</a>
+                <a href="/"><img src="{% static 'img/logo_pur_beurre.png' %}" width="32" height="32" alt="Logo" style="margin-right: 7px;" /></a>
+                <a class="navbar-brand js-scroll-trigger" href="{% url 'index' %}">Pur Beurre</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item">
                             <form method="get">
-                                <input class="form-control" name="query" type="text" placeholder="Chercher" />
+                                <input class="form-control" name="query" type="text" placeholder="Chercher un aliment" />
                             </form>
                         </li>
                         <li class="nav-item">
                         {% if user.is_authenticated %}
-                            <a class="nav-link" href="{% url 'authentication:profile' %}">Mon compte</a></li>
+                            <a class="nav-link" href="{% url 'authentication:profile' %}">
+                            <i class="fas fa-user-circle fa-2x fa-fw" title="Mon compte"></i></a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#services">Mes aliments</a></li>
+                            <a class="nav-link" href="{% url 'authentication:profile' %}">
+                            <i class="fas fa-carrot fa-2x fa-fw" title="Mes aliments"></i></a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'authentication:logout' %}">Déconnexion</a></li>
+                            <a class="nav-link" href="{% url 'authentication:logout' %}">
+                            <i class="fas fa-sign-out-alt fa-2x fa-fw" title="Déconnexion"></i></a>
+                        </li>
                         {% else %}
-                            <a class="nav-link" href="{% url 'authentication:login' %}">Se connecter</a></li>
+                            <a class="nav-link" href="{% url 'authentication:login' %}">
+                            <i class="fas fa-sign-in-alt fa-2x fa-fw" title="Connexion"></i></a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'authentication:signup' %}">S'inscrire</a></li>
+                            <a class="nav-link" href="{% url 'authentication:signup' %}">
+                            <i class="fas fa-user-plus fa-2x fa-fw" title="Inscription"></i></a>
+                        </li>
                         {% endif %}
                     </ul>
                 </div>
