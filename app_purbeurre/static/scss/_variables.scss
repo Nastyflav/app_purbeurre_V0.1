@@ -5,11 +5,13 @@
 $white: white !default;
 $brown: #5c4d42 !default;
 $yellow : #d19545 !default;
+$black : black !default;
 
 //- Override primary color
 $primary: $white !default;
 $secondary : $brown !default;
 $cookie : $yellow !default;
+$black : $black !default;
 
 //- Override font system
 $font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;

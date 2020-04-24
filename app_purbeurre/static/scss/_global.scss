@@ -40,3 +40,12 @@ hr.light {
 .page-section {
   padding: 8rem 0;
 }
+
+// - Custom texts
+
+.text-icons {
+  color: $cookie;
+  &:hover {
+    color: $black;  //highlight icon
+  }
+}
