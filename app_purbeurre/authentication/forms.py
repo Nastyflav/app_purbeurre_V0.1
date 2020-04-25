@@ -40,4 +40,4 @@ class LogInForm(AuthenticationForm):
     """Define all the informations given during the user login"""
     username = forms.EmailField(label="Votre identifiant (email)", widget=EmailInput(attrs={'class': 'form-control'}))
 
-    password = forms.CharField(label="Votre de passe", widget=PasswordInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(label="Votre mot de passe", widget=PasswordInput(attrs={'class': 'form-control'}))

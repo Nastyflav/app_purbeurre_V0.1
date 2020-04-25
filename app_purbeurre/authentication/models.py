@@ -18,7 +18,7 @@ class MyUserManager(BaseUserManager):
     """
     def create_user(self, email, password, **extra_fields):
         """
-        Creates and saves a User with the given email and password.
+        Creates and saves a user with the given email and password.
         """
         if not email:
             raise ValueError('The Email must be set')
@@ -27,17 +27,6 @@ class MyUserManager(BaseUserManager):
         user.set_password(password)
         user.save()
         return user
-
-    def create_superuser(self, email, password, **extra_fields):
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_superuser', True)
-        extra_fields.setdefault('is_active', True)
-
-        if extra_fields.get('is_staff') is not True:
-            raise ValueError('Superuser must have is_staff=True.')
-        if extra_fields.get('is_superuser') is not True:
-            raise ValueError('Superuser must have is_superuser=True.')
-        return self._create_user(email, password, **extra_fields)
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -51,7 +40,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = MyUserManager()
 
     def __str__(self):
+        """Returns the email as a string"""
         return self.email
         
     class Meta:
+        """To set the class name in french language"""
         verbose_name = "Utilisateur"
