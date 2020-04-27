@@ -8,10 +8,7 @@ Licence: `GNU GPL v3` GNU GPL v3: http://www.gnu.org/licenses/
 """
 
 from django.core.management.base import BaseCommand, CommandError
-from django.db import IntegrityError
-import requests
-from ...models import Category, Product
-from .constants import API_CATEGORIES, API_PAGE_SIZE, API_PAGES_NUMBER, API_URL_SOURCE
+from .database import Database
 
 
 class Command(BaseCommand):
@@ -34,11 +31,5 @@ class Command(BaseCommand):
         if options["category"] and options["product"]:
             self.category = options["category"]
             self.product = options["product"]
-            self.data_loading()
-
-    def data_loading(self):
-        """Request to the OFF API"""
-        self.categories = API_CATEGORIES
-        self.stdout.write("Loading data...")
 
 
