@@ -34,9 +34,9 @@ class Product(models.Model):
     image = models.URLField(verbose_name='Photo', blank=True)
 
     lipids_for_100g = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Lipides', null=True)
-    saturated_fats_for_100g = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Lipides', null=True)
-    sugars_for_100g = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Lipides', null=True)
-    salt_for_100g = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Lipides', null=True)
+    saturated_fats_for_100g = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Acides gras', null=True)
+    sugars_for_100g = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Sucres', null=True)
+    salt_for_100g = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Sel', null=True)
 
 
     class Meta:

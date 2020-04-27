@@ -8,7 +8,7 @@ Licence: `GNU GPL v3` GNU GPL v3: http://www.gnu.org/licenses/
 """
 
 from ...models import Category, Product
-from .constants import API_CATEGORIES, API_PAGE_SIZE, API_PAGES_NUMBER, API_URL_SOURCE
+from .constants import API_CATEGORIES, API_PAGE_SIZE, API_PAGES_NUMBER, API_URL_SOURCE, REQUIRED_KEYS
 import requests as rq
 
 
@@ -33,5 +33,30 @@ class Database():
                 datas = request.json()
 
                 for data in datas['products']:
-                    products = {}
-                    
+                    product = {}
+                    for key in REQUIRED_KEYS:
+                        product[key] = elt.get(key)
+                    if all(product.values()):
+                        nutriments = data.get('nutriments')
+                        prod = Product(
+                            name=product.get('product_name_fr'),
+                            generic_name_fr=product.get('generic_name_fr'),
+                            stores=product.get('stores'),
+                            nutrition_grade=product.get('nutrition_grade_fr'),
+                            code=product.get('code'),
+                            url=product.get('url'),
+                            image_url=product.get('image_url'),
+                            fat_100g=nutriments.get('fat_100g'),
+                            saturated_fat_100g=nutriments.get('saturated-fat_100g'),
+                            sugars_100g=nutriments.get('sugars_100g'),
+                            salt_100g=nutriments.get('salt_100g')
+                        )
+                        prod.save()
+                
+                    categories = data.get('categories')
+                    cat_list = categories.split(",")
+                    for category in cat_list:
+                        category = category.strip()
+                        if category in API_CATEGORIES:
+                            category = Category.objects.get(name=category)
+                            prod.category.add(category)

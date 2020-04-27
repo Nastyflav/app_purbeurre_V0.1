@@ -31,5 +31,8 @@ class Command(BaseCommand):
         if options["category"] and options["product"]:
             self.category = options["category"]
             self.product = options["product"]
+            self.db = Database()
+            self.db.add_categories()
+            self.db.add_products()
 
 
