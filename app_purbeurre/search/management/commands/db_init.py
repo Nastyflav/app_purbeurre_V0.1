@@ -8,6 +8,7 @@ Licence: `GNU GPL v3` GNU GPL v3: http://www.gnu.org/licenses/
 """
 
 from django.core.management.base import BaseCommand, CommandError
+
 from .database import Database
 
 
@@ -19,7 +20,7 @@ class Command(BaseCommand):
         """Requests the API then fills the DB"""
      
         self.db = Database()
-        
+
         self.db.add_products()
 
 

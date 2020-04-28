@@ -9,3 +9,10 @@ Licence: `GNU GPL v3` GNU GPL v3: http://www.gnu.org/licenses/
 
 from django.urls import path
 from . import views
+
+app_name = 'search'
+
+urlpatterns = [
+    path('', views.ProductSearchView.as_view(), name="search"),
+    path('details/', views.ProductDetailsView.as_view(), name="product-details"),
+]

@@ -1,0 +1,14 @@
+  {% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% for product in object_list %}
+
+    <li>{{ product.name }} - {{ product.nutriscore }}</li>
+
+{% endfor %}
+
+
+{% endblock content %}

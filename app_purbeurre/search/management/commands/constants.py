@@ -13,6 +13,3 @@ API_CATEGORIES = ['Pâte à tartiner', 'Thés en sachet', 'Fromages blancs', 'Ju
                  'Céréales pour petit-déjeuner', 'Cafés', 'Pâtes alimentaires', 'Epices', 'Légumes surgelés',
                  'Sauces tomates', 'Surimi', 'Légumineuses', 'Frites', 'Galettes de céréales soufflées']
 API_URL_SOURCE = 'https://fr.openfoodfacts.org/cgi/search.pl?'
-REQUIRED_KEYS = KEYS = ['product_name_fr', 'generic_name_fr', 'stores', 'nutrition_grade_fr',
-                        'code', 'url', 'image_url', {'nutriments': {'fat_100g', 'saturated-fat_100g',
-                        'sugars_100g', 'salt_100g'}}]
