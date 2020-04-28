@@ -24,14 +24,14 @@ class Category(models.Model):
 
 class Product(models.Model):
     """Product model"""
-    name = models.CharField(unique=True, null=True, max_length=100, verbose_name='Nom')
-    description = models.CharField(max_length=200, verbose_name='Description', blank=True)
+    name = models.CharField(unique=True, null=True, max_length=300, verbose_name='Nom')
+    description = models.CharField(max_length=300, verbose_name='Description', blank=True)
     category_id = models.ForeignKey(Category, related_name='category', verbose_name='ID Catégorie', on_delete=models.CASCADE, null=True)
-    store = models.CharField(max_length=200, verbose_name='Magasin(s)', blank=True)
+    store = models.CharField(max_length=300, verbose_name='Magasin(s)', blank=True)
     nutriscore = models.CharField(max_length=1, verbose_name='Nutriscore', blank=True)
     barcode = models.CharField(max_length=50, verbose_name='code-barre', blank=True)
-    url = models.URLField(unique=True, null=True, verbose_name='URL')
-    image = models.URLField(verbose_name='Photo', blank=True)
+    url = models.URLField(max_length=300, unique=True, null=True, verbose_name='URL')
+    image = models.URLField(max_length=300, verbose_name='Photo', blank=True)
 
     lipids_for_100g = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Lipides', null=True)
     saturated_fats_for_100g = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Acides gras', null=True)

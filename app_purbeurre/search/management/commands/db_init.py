@@ -15,24 +15,11 @@ class Command(BaseCommand):
     """Command class for custom django commands"""
     help = "Load datas from the OFF API to our database"
 
-    def add_arguments(self, parser):
-        """Set the enabled arguments for the command"""
-        parser.add_argument("-c", "--category", type=str)
-        parser.add_argument("-p", "--product", type=str)
-
     def handle(self, *args, **options):
         """Requests the API then fills the DB"""
-        if not isinstance(options["category"], str):
-            raise TypeError("Entrez une chaine de caractère.")
-
-        if not isinstance(options["product"], str):
-            raise TypeError("Entrez une chaine de caractère.")
-
-        if options["category"] and options["product"]:
-            self.category = options["category"]
-            self.product = options["product"]
-            self.db = Database()
-            self.db.add_categories()
-            self.db.add_products()
+     
+        self.db = Database()
+        
+        self.db.add_products()
 
 
