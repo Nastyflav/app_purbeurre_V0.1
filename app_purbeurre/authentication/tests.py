@@ -16,7 +16,7 @@ from .models import User
 class TestAuthentication(TestCase):
     """To test the authentication app"""
     def setUp(self):
-        """ Create  """
+        """ Create a temp user to perform tests"""
         self.client = Client()
         self.login_url = reverse('authentication:login')
         self.logout_url = reverse('authentication:logout')
