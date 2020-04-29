@@ -54,14 +54,15 @@ hr.light {
 
 .nutriscore-a { background-color: #06b600; }
 .nutriscore-b { background-color: #76ff40; }
-.nutriscore-c { background-color: #fffb05; }
+.nutriscore-c { background-color: #dfdb1c; }
 .nutriscore-d { background-color: #ff8800; }
 .nutriscore-e { background-color: #ff0000; }
 
 .product-card {
  	width: 300px;
   min-height: 300px;
-  background-color: $cookie; 
+  background-color: $cookie;
+  padding-bottom: -20rem;
  }
 
 .product-image-size {
@@ -70,10 +71,13 @@ hr.light {
 }
 
 .product-nutriscore {
-	width: 50px; 
-	height: 50px; 
-	line-height: 50px; 
-	left: calc(100% - 25px);
+	width: 80px; 
+	height: 80px; 
+  line-height: 80px; 
+  top: -7px;
+  left: calc(100% - 65px);
+  font-weight: bold;
+  border-radius: 0.25rem;
 }
 
 .product-image-size-max {
@@ -82,5 +86,16 @@ hr.light {
 }
 
 .product-title {
-	min-height: 90px;
+  min-height: 90px;
+  color: $white;
+  margin-bottom: -10px;
+}
+
+// - Custom headers
+
+.profile-header {
+  height: 300px;
+  width:100%;
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('../img/profile_img.jpg');
+  background-size: cover;
 }
