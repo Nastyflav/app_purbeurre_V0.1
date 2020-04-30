@@ -10,9 +10,11 @@ Licence: `GNU GPL v3` GNU GPL v3: http://www.gnu.org/licenses/
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from search.models import Product
 from .models import Favorites
+from authentication.models import User
 
 
 class SubstitutionView(ListView):
@@ -51,5 +53,41 @@ class SubstitutionView(ListView):
         context['image'] = self.product.image
         return context
 
-class FavoritesView(ListView):
-    pass
+@login_required
+def saving_product(request):
+    """Method to save products when user is logged in"""
+    if request.method == 'POST':
+        product = request.POST['original_product_id']
+        substitute = request.POST['substitute_id']
+        page = request.POST['next']
+
+        user_product = Product.objects.get(pk=product)
+        user_substitute = Product.objects.get(pk=substitute)
+        _user = User.objects.get(pk=request.user.pk)
+
+        if user_product and user_substitute and _user:
+            obj, created = Favorites.objects.get_or_create(
+                original_product_id=user_product,
+                substitute_id=user_substitute,
+                user_id=_user,
+            )
+            if created:
+                return redirect('save:favorites')
+            else:
+                messages.add_message(
+                    request,
+                    messages.INFO,
+                    'Le produit est déja enregistré !'
+                )
+                return redirect(page)
+
+    return redirect('index')
+
+class FavoritesView(ListView, LoginRequiredMixin):
+    """Lists all the saved products for a particular user""" 
+    template_name = 'save/favorites.html'
+    paginate_by = 6
+
+    def get_queryset(self):
+        return Favorites.objects.filter(
+            user_id=self.request.user.id).order_by("original_product_id")

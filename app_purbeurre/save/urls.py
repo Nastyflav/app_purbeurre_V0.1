@@ -14,5 +14,6 @@ app_name = 'save'
 
 urlpatterns = [
     path('substitution/<int:product_id>', views.SubstitutionView.as_view(), name="substitution"),
+    path('save/', views.saving_product, name="save"),
     path('favorites/', views.FavoritesView.as_view(), name="favorites"),
 ]

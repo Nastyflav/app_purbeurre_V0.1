@@ -79,6 +79,7 @@ class TestSave(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.client = Client()
+        cls.save_url = reverse('save:save')
         cls.favorites_url = reverse('save:favorites')
         db_init()
 
@@ -106,8 +107,8 @@ class TestSave(TestCase):
         response = self.client.get('/save/substitution/1')
         self.assertEqual(response.status_code, 200)
         product = Product.objects.get(id=1)
-        self.assertEqual(response.context_data["search"], product.name)
-        self.assertEqual(response.context_data["product"], product.id)
+        self.assertEqual(response.context_data["name"], product.name)
+        self.assertEqual(response.context_data["id"], product.id)
         self.assertEqual(response.context_data["image"], product.image)
 
     def test_substitution_unknown_id(self):
@@ -115,6 +116,21 @@ class TestSave(TestCase):
         response = self.client.get('/save/substitution/15')
         self.assertRedirects(
             response, '/', status_code=302, target_status_code=200)
+
+    
+    def test_save_valid_post_if_not_logged(self):
+        user_id = User.objects.get(email='remy@purbeurre.fr').id
+        response = self.client.post(
+            self.save_url, {
+                'original_product_id': Product.objects.get(id=1).id,
+                'substitute_id': Product.objects.get(id=2).id,
+                'user_id': user_id,
+                'next': '/',
+            }
+        )
+        self.assertRedirects(
+            response, '/authentication?next=/save/save/',
+            status_code=302, target_status_code=301)
 
     # def test_favorites_page_returns_200(self):     # checking FavoritesView()
     #     """To test the status code and the login page"""

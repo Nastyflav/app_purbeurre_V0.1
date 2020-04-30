@@ -19,9 +19,20 @@
     </div>
 </header>
   
-  <section class="container">
+<section class="container">
     <div class="row h-100 align-items-center justify-content-center text-center">
-      {% if not object_list %}
+
+        {% if messages %}
+        <div class="row align-items-center justify-content-center text-center">
+        {% for text in messages %}
+        <div class="col-lg-6 alert alert-warning p-3" role="alert">
+        {{ text }}
+        </div>
+        {% endfor %}
+        </div>
+        {% endif %}
+      
+        {% if not object_list %}
       <div class="col-lg-6 align-self-center mt-3">
         <div class="card">
           <div class="card-header text-white-75">
@@ -42,10 +53,10 @@
               <a class="nav-link text-white-75 font-weight-light mb-5" href="{% url 'search:product-details' product.id %}">Plus de détails
                 <i class="fas fa-info-circle fa-2x fa-fw" title="Fiche produit"></i></a>
 
-                <form  method="POST">
+                <form action="{% url 'save:save' %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="next" value="{{ request.path }}">
-                    <input type="hidden" name="original_id" value="{{ id }}">
+                    <input type="hidden" name="original_product_id" value="{{ id }}">
                     <input type="hidden" name="substitute_id" value="{{ product.id }}">
 					<button type="submit" class="btn btn-outline-info">
 	          			<i class="far fa-save fa-2x fa-fw"></i> Sauvegarder</button>
@@ -55,6 +66,6 @@
       </div>
       {% endfor %}
     </div>
-  </section><br>
+</section><br>
 
 {% endblock content %}
