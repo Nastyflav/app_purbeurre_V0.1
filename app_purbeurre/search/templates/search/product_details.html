@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block content %}
+
 {% if not object.image %}
 <header class="profile-header"></header>
 {% else %}
@@ -13,6 +14,7 @@
             <div class="col-lg-10 align-self-end">
                 <h1 class="text-uppercase text-white font-weight-bold">{{ object.name }}</h1>
                 <hr class="divider my-4" />
+                <p class="text-white-75 font-weight-light mb-5">Informations sur ce produit</p>
         </div>
     </div>
 </header>

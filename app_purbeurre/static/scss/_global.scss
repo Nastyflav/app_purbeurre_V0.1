@@ -24,6 +24,17 @@ hr.light {
   font-family: $font-family-sans-serif;
 }
 
+.btn-outline-info {
+  color: $black;
+  border-color: $black;
+  background-color: $white;
+  &:hover {
+    color: white;
+    background-color: $brown;
+    border-color: $brown;
+  }
+}
+
 //- Custom XL button styling
 
 .btn-xl {

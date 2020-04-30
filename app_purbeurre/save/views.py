@@ -46,8 +46,8 @@ class SubstitutionView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['search'] = self.product.name
-        context['product'] = self.product.id
+        context['name'] = self.product.name
+        context['id'] = self.product.id
         context['image'] = self.product.image
         return context
 
