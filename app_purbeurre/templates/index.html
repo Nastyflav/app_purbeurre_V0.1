@@ -16,7 +16,7 @@
                 <p class="text-white-75 font-weight-light mb-5">Trouvez un produit de substitution pour ceux que vous consommez tous les jours</p>
             </div>
             <div class="col-lg-5 align-self-start">
-                <form>
+                <form method="get" action="{% url 'search:search' %}"> 
                     <div class="form-row align-items-center">
                         <div class="col-sm-9 my-1">
                             <input type="text" name="query" class="form-control" placeholder="Produit">

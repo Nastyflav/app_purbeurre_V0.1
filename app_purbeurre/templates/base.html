@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item">
-                            <form method="get">
+                            <form method="get" action="{% url 'search:search' %}">
                                 <input class="form-control" name="query" type="text" placeholder="Chercher" />
                             </form>
                         </li>
