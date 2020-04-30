@@ -23,5 +23,5 @@ urlpatterns = [
     path('mentions-legales/', TemplateView.as_view(template_name="terms.html"), name="terms"),
     path('authentication/', include("authentication.urls")),
     path('search/', include("search.urls")),
-    # path('save/', include("save.urls")),
+    path('save/', include("save.urls")),
 ]

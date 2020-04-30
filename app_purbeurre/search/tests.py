@@ -14,11 +14,10 @@ from django.core.management import call_command
 from unittest.mock import patch
 
 from .models import Category, Product
-from authentication.models import User
 
 
 def db_init():
-    """Create a temp user and temp products to perform tests"""
+    """Create temp products to perform tests"""
     data = Category(name="Pate à tartiner")
     data.save()
 
@@ -80,7 +79,7 @@ class TestSearch(TestCase):
         db_init()
 
     def test_search_page_returns_200(self):     # checking ProductSearchView()
-        """To test the status code and the login page"""
+        """To test the status code and the search page"""
         response = self.client.get(self.search_url +"?query=food")
         self.assertTemplateUsed(response, 'search/search_results.html')
         self.assertEqual(response.status_code, 200)

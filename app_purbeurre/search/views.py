@@ -37,12 +37,14 @@ class ProductSearchView(ListView):
             return redirect('index')
 
     def get_queryset(self):
+        """Get the query and the products matching it"""
         query = self.request.GET.get("query")
 
         return Product.objects.filter(
             name__icontains=query).order_by('name')
 
     def get_context_data(self, **kwargs):
+        """Returns the context"""
         context = super().get_context_data(**kwargs)
         context['search'] = self.request.GET.get("query")
         return context
