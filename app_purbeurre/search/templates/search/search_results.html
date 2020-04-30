@@ -24,14 +24,14 @@
         <div class="card-header text-white-75">
           Désolé, le produit que vous recherchez n'est pas disponible, mais vous pouvez essayer autre chose !
         </div>
-    </div>
+      </div>
     {% endif %}
 
     {% for product in object_list %}
     <div class="col-lg-4 align-self-start text-center p-3">
       <div class="card m-auto b-5 product-card">
         <div class="bg-light rounded m-0 p-0 product-image-size">
-          <div class="position-absolute text-white product-nutriscore nutriscore-{{ product.nutriscore }}">{{ product.nutriscore|upper }}</div>          
+          <div class="position-absolute product-nutriscore nutriscore-{{ product.nutriscore }}">{{ product.nutriscore|upper }}</div>          
           <img class="img-responsive rounded product-image-size-max" src="{{ product.image }}" alt="Image" />
         </div>  
           <div class="card-body">
