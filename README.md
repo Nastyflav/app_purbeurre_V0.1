@@ -70,23 +70,23 @@ Email (as username) and password are required, firstname and lastname are option
 
 By clicking on the log in icon, the user is invited to fill in the log in form, with his username (email) and password 
 
-# 3. Make a research
+## 3. Make a research
 
 This functionality works either the user is logged in or not. He has to fill in the search bar (at the top of the page or the one right at the beginning of the home page) with a keyword.
 ex. "Banana" will give him every product that contains the word in their names.
 
-# 4. Select a product
+## 4. Select a product
 
 Once the query is done, the application returns a bunch of products that match. The user can consult the details of each one of them and just has to choose which one he wants to substitute.
 
-# 4. Select and save a substitute
+## 5. Select and save a substitute
 
 The application returns products of the same category but only those with better or equivalent Nutriscore. Here again, the user can consult the nutritionals details and have access to the product card in the Open Food Facts website 
 By clicking on the save icon, the product will be saved as a favorite for the user.
 
-# 5. Consult your favorites in your account
+## 6. Consult your favorites in your account
 
 By clicking on the carot icon in the navbar, the user has access to all his favorites products and consult the details of every one of them
 
-# 6. Log out of your account
+## 7. Log out of your account
 Once the user is connected to his account, he can at every moment log out of his account by clicking on the disconnect icon
