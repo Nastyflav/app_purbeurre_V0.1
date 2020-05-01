@@ -57,22 +57,22 @@ Flavien Murail : https://github.com/Nastyflav
 # How does Pur Beurre works ?
 ----------------
 
-This application uses the Open Food Facts API to offer a large amount of food products, divided in 15 categories, so the user can find as many substitutes as possible for his daily life
+This application uses the Open Food Facts API to offer a large amount of food products, divided in 15 categories, so the user can find as many substitutes as possible for his daily life.
 All the products are ranked by their Nutriscore grade, which goes from A (high quality) to E. The products with the highest ranking are those less transformed by the industry, healthy and with good nutritional intakes
 More informations about Open Food Facts [here](https://fr.openfoodfacts.org/decouvrir).
 
 ## 1. Create an account
 
 The user needs to create an account to be able to save his researches, otherwise he will just be able to consult the products catalog.
-Email (as username) and password are required, firstname and lastname are optionals
+Email (as username) and password are required, firstname and lastname are optionals.
 
 ## 2. Log in your account
 
-By clicking on the log in icon, the user is invited to fill in the log in form, with his username (email) and password 
+By clicking on the log in icon, the user is invited to fill in the log in form, with his username (email) and password.
 
 ## 3. Make a research
 
-This functionality works either the user is logged in or not. He has to fill in the search bar (at the top of the page or the one right at the beginning of the home page) with a keyword.
+This functionality works either the user is logged in or not. He has to fill in the search bar (at the top of the page or the one right at the beginning of the home page) with a keyword.\
 ex. "Banana" will give him every product that contains the word in their names.
 
 ## 4. Select a product
@@ -86,7 +86,7 @@ By clicking on the save icon, the product will be saved as a favorite for the us
 
 ## 6. Consult your favorites in your account
 
-By clicking on the carot icon in the navbar, the user has access to all his favorites products and consult the details of every one of them
+By clicking on the carot icon in the navbar, the user has access to all his favorites products and consult the details of every one of them.
 
 ## 7. Log out of your account
-Once the user is connected to his account, he can at every moment log out of his account by clicking on the disconnect icon
+Once the user is connected to his account, he can at every moment log out of his account by clicking on the disconnect icon.
