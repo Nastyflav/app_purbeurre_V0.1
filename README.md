@@ -9,7 +9,7 @@ quality. The program also gives you the possibility of creating an user account 
 ----------------
 Once you arrive on the [Pur Beurre application page](https://gp-bot-app.herokuapp.com/) :\
 	- you can make a simple request by using the query form, then visualize the results \
-	- you can create an account and then log in to be able to save your future search results \
+	- you can create an account and then log in to be able to save your future search results
 
 Pur Beurre is hosted by [Heroku](https://www.heroku.com/), and for now is only available in french language.	
 
@@ -23,7 +23,7 @@ Documentation about pull --> https://help.github.com/en/articles/cloning-a-repos
 Set your virtual environment under python3.8.x `pip install virtualenv`\
 Create an new virtual environment `virtualenv -p python env`\
 Activate it `source env/Scripts/activate.bat`\
-Install requirements `pip install -r requirements.txt`\
+Install requirements `pip install -r requirements.txt`
 
 ## Dependancies :
 
@@ -41,7 +41,7 @@ app_purbeurre/authentication/ user profiles, sign in, log in and out functionali
 app_purbeurre/save/ products saving functionalities\
 app_purbeurre/search/ products searching and printing functionalities\
 app_purbeurre/static/ all the static files, with Boostrap, JQuery, Java Script, images and css/sass libraries\
-app_purbeurre/templates/ all the basics and home html templates\
+app_purbeurre/templates/ all the basics and home html templates
 
 ## Built with :
 
@@ -58,12 +58,12 @@ Flavien Murail : https://github.com/Nastyflav
 ----------------
 
 This application uses the Open Food Facts API to offer a large amount of food products, divided in 15 categories, so the user can find as many substitutes as possible for his daily life.
-All the products are ranked by their Nutriscore grade, which goes from A (high quality) to E. The products with the highest ranking are those less transformed by the industry, healthy and with good nutritional intakes
+All the products are ranked by their Nutriscore grade, which goes from A (high quality) to E. The products with the highest ranking are those less transformed by the industry, healthy and with good nutritional intakes.\
 More informations about Open Food Facts [here](https://fr.openfoodfacts.org/decouvrir).
 
 ## 1. Create an account
 
-The user needs to create an account to be able to save his researches, otherwise he will just be able to consult the products catalog.
+The user needs to create an account to be able to save his researches, otherwise he will just be able to consult the products catalog.\
 Email (as username) and password are required, firstname and lastname are optionals.
 
 ## 2. Log in your account
@@ -73,7 +73,7 @@ By clicking on the log in icon, the user is invited to fill in the log in form, 
 ## 3. Make a research
 
 This functionality works either the user is logged in or not. He has to fill in the search bar (at the top of the page or the one right at the beginning of the home page) with a keyword.\
-ex. "Banana" will give him every product that contains the word in their names.
+ex. "Banana" will give him every product that contains the word in it name.
 
 ## 4. Select a product
 
@@ -81,7 +81,7 @@ Once the query is done, the application returns a bunch of products that match. 
 
 ## 5. Select and save a substitute
 
-The application returns products of the same category but only those with better or equivalent Nutriscore. Here again, the user can consult the nutritionals details and have access to the product card in the Open Food Facts website 
+The application returns products of the same category but only those with better or equivalent Nutriscore. Here again, the user can consult the nutritionals details and have access to the product card in the Open Food Facts website.\ 
 By clicking on the save icon, the product will be saved as a favorite for the user.
 
 ## 6. Consult your favorites in your account
