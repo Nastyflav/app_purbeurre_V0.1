@@ -10006,6 +10006,47 @@ hr.light {
   color: white;
 }
 
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+.page-link:hover {
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+  background-color: #d37903;
+  border-color: black;
+}
+
+.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.page-item:last-child .page-link {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.page-item.active .page-link {
+  z-index: 3;
+  color: white;
+  background-color: white;
+  border-color: white;
+}
+.page-item.disabled .page-link {
+  color: black;
+  pointer-events: none;
+  cursor: auto;
+  background-color: white;
+  border-color: black;
+}
+
 #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: white;
