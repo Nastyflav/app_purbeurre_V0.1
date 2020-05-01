@@ -25,7 +25,6 @@ class Category(models.Model):
 class Product(models.Model):
     """Product model"""
     name = models.CharField(unique=True, null=True, max_length=300, verbose_name='Nom')
-    description = models.CharField(max_length=300, verbose_name='Description', blank=True)
     category_id = models.ForeignKey(Category, related_name='category', verbose_name='ID Catégorie', on_delete=models.CASCADE, null=True)
     store = models.CharField(max_length=300, verbose_name='Magasin(s)', blank=True)
     nutriscore = models.CharField(max_length=1, verbose_name='Nutriscore', blank=True)

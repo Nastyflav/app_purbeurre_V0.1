@@ -22,11 +22,11 @@
 <section class="container">
     <div class="row h-100 align-items-center justify-content-center text-center">
 
-        {% if messages %}
+        {% if message %}
         <div class="row align-items-center justify-content-center text-center">
-        {% for text in messages %}
+        {% for message in messages %}
         <div class="col-lg-6 alert alert-warning p-3" role="alert">
-        {{ text }}
+        {{ message }}
         </div>
         {% endfor %}
         </div>
@@ -53,12 +53,12 @@
               <a class="nav-link text-white-75 font-weight-light mb-5" href="{% url 'search:product-details' product.id %}">Plus de détails
                 <i class="fas fa-info-circle fa-2x fa-fw" title="Fiche produit"></i></a>
 
-                <form action="{% url 'save:save' %}" method="POST">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ request.path }}">
-                    <input type="hidden" name="original_product_id" value="{{ id }}">
-                    <input type="hidden" name="substitute_id" value="{{ product.id }}">
-					<button type="submit" class="btn btn-outline-info">
+                <form action="{% url 'save:save' %}" method="POST" >
+                  {% csrf_token %}
+                  <input type="hidden" name="next" value="{{ request.path }}">
+                  <input type="hidden" name="original_product_id" value="{{ id }}">
+                  <input type="hidden" name="substitute_id" value="{{ product.id }}">
+					        <button type="submit" class="btn btn-outline-info" {% if product.saved %} disabled {% endif %}>
 	          			<i class="far fa-save fa-2x fa-fw"></i> Sauvegarder</button>
 	          	  </form>
             </div>

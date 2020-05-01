@@ -23,7 +23,6 @@ def db_init():
 
     data = Product(
         name="Beurre de cacahuètes",
-        description="Typiquement américaine",
         category_id=Category.objects.get(name="Pate à tartiner"),
         store="Carrefour",
         nutriscore="c",
@@ -39,7 +38,6 @@ def db_init():
 
     data = Product(
         name="Ovomaltine",
-        description="Depuis les sommets helvètes",
         category_id=Category.objects.get(name="Pate à tartiner"),
         store="Leclerc, BioCoop",
         nutriscore="a",
@@ -55,7 +53,6 @@ def db_init():
 
     data = Product(
         name="Nutella",
-        description="De l'huile de palme solide",
         category_id=Category.objects.get(name="Pate à tartiner"),
         store="Auchan",
         nutriscore="b",
