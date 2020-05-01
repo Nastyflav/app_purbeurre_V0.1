@@ -59,7 +59,7 @@ Flavien Murail : https://github.com/Nastyflav
 
 This application uses the Open Food Facts API to offer a large amount of food products, divided in 15 categories, so the user can find as many substitutes as possible for his daily life.
 All the products are ranked by their Nutriscore grade, which goes from A (high quality) to E. The products with the highest ranking are those less transformed by the industry, healthy and with good nutritional intakes.\
-More informations about Open Food Facts [here](https://fr.openfoodfacts.org/decouvrir).
+More informations about the Open Food Facts Nutriscore notation [here](https://fr.openfoodfacts.org/nutriscore).
 
 ## 1. Create an account
 

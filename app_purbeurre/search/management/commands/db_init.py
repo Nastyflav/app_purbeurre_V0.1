@@ -20,7 +20,7 @@ class Command(BaseCommand):
         """Requests the API then fills the DB"""
      
         self.db = Database()
-
+        self.db.add_categories()
         self.db.add_products()
 
 
