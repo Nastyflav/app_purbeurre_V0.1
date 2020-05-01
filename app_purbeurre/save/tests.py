@@ -118,7 +118,8 @@ class TestSave(TestCase):
             response, '/', status_code=302, target_status_code=200)
 
     
-    def test_save_valid_post_if_not_logged(self):
+    def test_save_if_user_not_logged_in(self):   # checking saving_product()
+        """To check the redirection when an unlogged user tries to save a prod"""
         user_id = User.objects.get(email='remy@purbeurre.fr').id
         response = self.client.post(
             self.save_url, {
@@ -132,8 +133,79 @@ class TestSave(TestCase):
             response, '/authentication?next=/save/save/',
             status_code=302, target_status_code=301)
 
-    # def test_favorites_page_returns_200(self):     # checking FavoritesView()
-    #     """To test the status code and the login page"""
-    #     response = self.client.get(self.favorites_url)
-    #     self.assertTemplateUsed(response, 'save/favorites.html')
-    #     self.assertEqual(response.status_code, 200)
+    def test_save_if_original_product_no_longer_exists(self):
+        """To check the error raising when a substituted product is erased"""
+        user_id = User.objects.get(email='remy@purbeurre.fr').id
+        with self.assertRaises(Product.DoesNotExist):
+            response = self.client.post(
+                self.save_url, {
+                    'original_product_id': Product.objects.get(id=10).id,
+                    'substitute_id': Product.objects.get(id=2).id,
+                    'user_id': user_id,
+                }
+            )
+
+    def test_save_without_any_savings_yet(self):
+        """To check a fresh account with no saved products"""
+        self.client.login(
+            username='remy@purbeurre.fr',
+            password='pixar2020')
+
+        user_id = User.objects.get(email='remy@purbeurre.fr').id
+        self.assertEqual(Favorites.objects.all().count(), 0)
+
+    def test_save_with_a_save_product(self):
+        """To check if the POST method when a product is saved"""
+        self.client.login(
+            username='remy@purbeurre.fr',
+            password='pixar2020')
+
+        user_id = User.objects.get(email='remy@purbeurre.fr').id
+        response = self.client.post(
+            self.save_url, {
+                'original_product_id': Product.objects.get(id=1).id,
+                'substitute_id': Product.objects.get(id=2).id,
+                'user_id': user_id,
+                'next': '/',
+            }
+        )
+        self.assertEqual(Favorites.objects.all().count(), 1)
+        self.assertRedirects(   # check the redirection to the favorites page
+            response, '/save/favorites/',
+            status_code=302, target_status_code=200)
+
+
+    def test_favorites_page_returns_200(self):     # checking FavoritesView()
+        """To test the status code and the login page"""
+        response = self.client.get(self.favorites_url)
+        self.assertTemplateUsed(response, 'save/favorites.html')
+        self.assertEqual(response.status_code, 200)
+
+    def test_favorites_page_without_any_saving_yet(self):
+        """To check the favorites page doesn't contains products when no one is already saved"""
+        self.client.login(
+            username='remy@purbeurre.fr',
+            password='pixar2020')
+
+        user_id = User.objects.get(email='remy@purbeurre.fr').id
+        response = self.client.get(self.favorites_url)
+        self.assertEqual(response.context_data["object_list"].count(), 0)
+
+    def test_favorites_page_with_a_saved_product(self):
+        """To check the favorites page prints a product when it's saved"""
+        self.client.login(
+            username='remy@purbeurre.fr',
+            password='pixar2020')
+
+        user_id = User.objects.get(email='remy@purbeurre.fr').id
+        response = self.client.post(
+            self.save_url, {
+                'original_product_id': Product.objects.get(id=1).id,
+                'substitute_id': Product.objects.get(id=2).id,
+                'user_id': user_id,
+                'next': '/',
+            }
+        )
+        response = self.client.get(self.favorites_url)
+        self.assertEqual(response.context_data["object_list"].count(), 1)
+        self.assertEqual(response.status_code, 200)
