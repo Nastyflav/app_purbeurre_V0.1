@@ -57,93 +57,36 @@ Flavien Murail : https://github.com/Nastyflav
 # How does Pur Beurre works ?
 ----------------
 
-This application is working only when it's being used by the user's terminal. You just need to use your keyboard to interact with the app. Pur Beurre is for now only available in french language.
-All the products are ranked by their Nova Group grade, which goes from 1 (high quality) to 4. The products with the highest ranking are those less transformed by the industry, healthy and with good nutritional intakes
-More informations about the NOVA classification [here](https://fr.openfoodfacts.org/nova).
+This application uses the Open Food Facts API to offer a large amount of food products, divided in 15 categories, so the user can find as many substitutes as possible for his daily life
+All the products are ranked by their Nutriscore grade, which goes from A (high quality) to E. The products with the highest ranking are those less transformed by the industry, healthy and with good nutritional intakes
+More informations about Open Food Facts [here](https://fr.openfoodfacts.org/decouvrir).
 
 ## 1. Create an account
 
-At first, the user has to choose between two type of research :
-```
-Que souhaitez-vous faire ?
-Pour consulter les catégories d'aliments disponibles -> Tapez 1
-Pour consulter vos aliments favoris -> Tapez 2
-```
+The user needs to create an account to be able to save his researches, otherwise he will just be able to consult the products catalog.
+Email (as username) and password are required, firstname and lastname are optionals
 
 ## 2. Log in your account
 
-If the user entered 1, he can choose a category among all that the program provides :
-```
-=======CATEGORIES=========
-Choisissez un type d'aliment en tapant son numéro :
-
-Pâtes à tartiner -> Tapez 1
-Thés -> Tapez 2
-Fromages blancs -> Tapez 3
-Jus de fruits -> Tapez 4
-Confitures -> Tapez 5
-(etc)
-```
+By clicking on the log in icon, the user is invited to fill in the log in form, with his username (email) and password 
 
 # 3. Make a research
 
+This functionality works either the user is logged in or not. He has to fill in the search bar (at the top of the page or the one right at the beginning of the home page) with a keyword.
+ex. "Banana" will give him every product that contains the word in their names.
+
 # 4. Select a product
 
-Once the category is selected, the application returns a bunch of products associated. The user just has to choose which one he wants to substitute :
-```
-=======ALIMENTS=======
-Choisissez un produit à substituer en tapant son numéro :
-```
-A selection of low-quality products is then showed, with their names and their Nova Group grades
+Once the query is done, the application returns a bunch of products that match. The user can consult the details of each one of them and just has to choose which one he wants to substitute.
 
-# 4. Select a substitute
+# 4. Select and save a substitute
 
-Based on the same system than during the product selection. The program show to the user a higher quality product and prints its caracteristics :
-```
-=======PRODUIT À REMPLACER=======
+The application returns products of the same category but only those with better or equivalent Nutriscore. Here again, the user can consult the nutritionals details and have access to the product card in the Open Food Facts website 
+By clicking on the save icon, the product will be saved as a favorite for the user.
 
-Voici les substituts pour Nutella, Nova GROUPE : 4
+# 5. Consult your favorites in your account
 
-=======BETTER, HEALTHIER, TASTIER=======
-```
-A random high-quality product is then showed, with its name and its Nova Group grade.
-The user can select it to see its details :
-```
-=======SUBSTITUT SÉLECTIONNÉ=======
-Nom : Coquillettes (Maxi Format)
+By clicking on the carot icon in the navbar, the user has access to all his favorites products and consult the details of every one of them
 
-Description : Pâtes alimentaires au blé dur de qualité supérieure
-
-Groupe Nova : 1
-
-Disponible chez : Carrefour market
-
-En savoir plus : https://fr.openfoodfacts.org/produit/3038350023001/coquillettes-maxi-format-panzani
-```
-
-# 5. Save a substitute
-
-The program then asks the user if he wants to save his result into his favorites :
-```
-Souhaitez vous placer ce produit dans vos favoris ?
-Oui -> Tapez 1
-Non -> Tapez 2
-```
-If the user answers `1`, the program will record the new favorite in the local database. In any case, the user then has to choose to go back to the homepage or to close the app.
-
-# 6. Consult your favorites in your account
-
-At the beginning of the application, if the user chose to consult his records, all of his favorites products are displayed. \
-Every substitute is associated with the original product it replaces :
-```
-=======HALL OF FAME=======
-1 -> Sauce arrabbiata, comme substitut à Sauce tomate basilic
-2 -> Brocolis En fleurettes, comme substitut à Poêlée la potagère
-3 -> Tassimo - Lor café long intense, comme substitut à Nescafé 3 en 1 goût Café au Lait sucré
-4 -> Nocciolata, comme substitut à Choco nussa
-(etc)
-```
-By selecting the favorite's number, the user can see more details of the substitute he previously saved.
-
-# 7. Log out of your account
-Once you're connected to your account, you can at every moment log out of your account by clicking on the disconnect icon
+# 6. Log out of your account
+Once the user is connected to his account, he can at every moment log out of his account by clicking on the disconnect icon
