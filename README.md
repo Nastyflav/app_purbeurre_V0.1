@@ -82,7 +82,7 @@ Once the query is done, the application returns a bunch of products that match. 
 ## 5. Select and save a substitute
 
 The application returns products of the same category but only those with better or equivalent Nutriscore.\
-Here again, the user can consult the nutritionals details and have access to the product card in the Open Food Facts website.\ 
+Here again, the user can consult the nutritionals details and have access to the product card in the Open Food Facts website.
 By clicking on the save icon, the product will be saved as a favorite for the user.
 
 ## 6. Consult your favorites in your account
