@@ -119,5 +119,6 @@ class TestSearch(TestCase):
         response = self.client.get('/search/details/15')
         self.assertEqual(response.status_code, 404)
 
+
 class TestCommand(TransactionTestCase):
     pass
