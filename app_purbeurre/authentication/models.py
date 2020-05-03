@@ -8,7 +8,8 @@ Licence: `GNU GPL v3` GNU GPL v3: http://www.gnu.org/licenses/
 """
 
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import PermissionsMixin
 
 
 class MyUserManager(BaseUserManager):
@@ -36,13 +37,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=40, blank=True)
     is_active = models.BooleanField(default=True)
 
-    USERNAME_FIELD = 'email'    #send the user email as a user name to the authentication form
+    USERNAME_FIELD = 'email'
     objects = MyUserManager()
 
     def __str__(self):
         """Returns the email as a string"""
         return self.email
-        
+
     class Meta:
         """To set the class name in french language"""
         verbose_name = "Utilisateur"

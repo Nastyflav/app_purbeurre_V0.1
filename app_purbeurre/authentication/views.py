@@ -8,7 +8,7 @@ Licence: `GNU GPL v3` GNU GPL v3: http://www.gnu.org/licenses/
 """
 
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.views.generic import FormView
 from .forms import SignUpForm
 
@@ -30,6 +30,7 @@ class SignUp(FormView):
         if user:
             login(self.request, user)
         return super().form_valid(form)
+
 
 def profile(request):
     """User profile"""
