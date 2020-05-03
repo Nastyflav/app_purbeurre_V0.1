@@ -7,7 +7,7 @@ Licence: `GNU GPL v3` GNU GPL v3: http://www.gnu.org/licenses/
 
 """
 
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -21,22 +21,15 @@ from authentication.models import User
 class SubstitutionView(ListView):
     """
     Displays a list of products to replace the selected one
-    
+
     Arguments: ListView {class} -- generic listview
-    
+
     Returns: products -- products with better nutriscore in the same category
-    
+
     """
     model = Product
     paginate_by = 6
     template_name = 'save/substitution.html'
-
-    def get(self, request, *args, **kwargs):
-        try:
-            product = Product.objects.get(pk=self.kwargs['product_id'])
-            return super(SubstitutionView, self).get(request, *args, **kwargs)
-        except Product.DoesNotExist:
-            return redirect('index')
 
     def get_queryset(self):
         """Allows some products from the same category"""
@@ -48,11 +41,13 @@ class SubstitutionView(ListView):
             id=self._id).order_by('nutriscore')
 
     def get_context_data(self, **kwargs):
+        """Returns the required fiels of each product"""
         context = super().get_context_data(**kwargs)
         context['name'] = self.product.name
         context['id'] = self.product.id
         context['image'] = self.product.image
         return context
+
 
 @login_required
 def saving_product(request):
@@ -84,8 +79,9 @@ def saving_product(request):
 
     return redirect('index')
 
+
 class FavoritesView(ListView, LoginRequiredMixin):
-    """Lists all the saved products for a particular user""" 
+    """Lists all the saved products for a particular user"""
     template_name = 'save/favorites.html'
     paginate_by = 6
 
