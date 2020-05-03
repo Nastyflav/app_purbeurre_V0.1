@@ -73,7 +73,7 @@ By clicking on the log in icon, the user is invited to fill in the log in form, 
 ## 3. Make a research
 
 This functionality works either the user is logged in or not. He has to fill in the search bar (at the top of the page or the one right at the beginning of the home page) with a keyword.\
-ex. "Banana" will give him every product that contains the word in it name.
+ex. "Banana" will give him every product that contains the word in it name, ordered by their nutriscores (from E to A).
 
 ## 4. Select a product
 
