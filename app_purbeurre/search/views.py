@@ -7,7 +7,7 @@ Licence: `GNU GPL v3` GNU GPL v3: http://www.gnu.org/licenses/
 
 """
 
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView
 
 from .models import Product
@@ -16,17 +16,16 @@ from .models import Product
 class ProductSearchView(ListView):
     """
     Displays a list of products matching with the user query
-    
+
     Arguments: ListView {class} -- generic listview
-    
+
     Returns: products -- products matching with search query
-    
+
     """
-   
+
     model = Product
     paginate_by = 6
     template_name = 'search/search_results.html'
-
 
     def get(self, request, *args, **kwargs):
         """ No Server Error """

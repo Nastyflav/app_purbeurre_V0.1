@@ -14,5 +14,6 @@ app_name = 'search'
 
 urlpatterns = [
     path('', views.ProductSearchView.as_view(), name="search"),
-    path('details/<int:pk>', views.ProductDetailsView.as_view(), name="product-details"),
+    path('details/<int:pk>', views.ProductDetailsView.as_view(),
+         name="product-details"),
 ]
