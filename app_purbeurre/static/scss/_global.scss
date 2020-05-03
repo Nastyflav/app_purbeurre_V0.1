@@ -182,3 +182,12 @@ hr.light {
     border-color: $black;
   }
 }
+
+// - Custom alert messages
+
+.alert-warning {
+    color: $white;
+    background-color: $brown;
+    border-color: $brown;
+    margin-top: 1rem;
+}
