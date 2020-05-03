@@ -41,7 +41,7 @@ class ProductSearchView(ListView):
         query = self.request.GET.get("query")
 
         return Product.objects.filter(
-            name__icontains=query).order_by('name')
+            name__icontains=query).order_by('-nutriscore')
 
     def get_context_data(self, **kwargs):
         """Returns the context"""
